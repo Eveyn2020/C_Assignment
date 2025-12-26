@@ -1,0 +1,4 @@
+Love|Deep affection and connection between people.
+Attach|To join or connect one thing to another.
+Hardware|The physical parts of a computer or electronic device.
+Software|Instructions that tell hardware what to do.
