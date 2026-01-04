@@ -181,7 +181,7 @@ void check_book_already(char book_name[200]){
     for(int i=0;i<G_index;i++){
         int db_name_count= char_counter(db[i].book_title);
         if(db_name_count==book_char_count){
-            for(int n;n<book_char_count;n++){
+            for(int n=0;n<book_char_count;n++){
                 if(book_name[n]!=db[i].book_title[n]){
                     break;
                 }
