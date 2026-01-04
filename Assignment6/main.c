@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 #define INFOSIZE 1000
 
 int G_index=0;
@@ -203,7 +204,6 @@ void recording_to_file(){
         printf("File cannot open!");
     }else{
         for(int i=0;i<G_index;i++){
-            printf("This is check %s|%s", db[i].word, db[i].definition);
             fprintf(fptr, "%s|%s\n", db[i].word, db[i].definition);
         }
     }
@@ -235,7 +235,7 @@ void compare_two_name(char search_word[100],char db_word[100]){
     int same_counter=0;
     if(search_counter==db_counter){
         for(int i=0;i<search_counter;i++){
-            if(search_word[i]!=db_word[i]){
+            if(tolower(search_word[i])!=tolower(db_word[i])){
                 break;
             }else{
                 same_counter++;
