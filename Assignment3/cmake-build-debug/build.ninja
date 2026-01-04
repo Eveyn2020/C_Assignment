@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = C$:/Users/Khin$ May$ Thu/CLionProjects/Assignment3/cmake-build-debug/
+cmake_ninja_workdir = C$:/Users/Khin$ May$ Thu/CLionProjects/CAssignment/Assignment3/cmake-build-debug/
 # =============================================================================
 # Object build statements for EXECUTABLE target Assignment3
 
@@ -49,7 +49,7 @@ cmake_ninja_workdir = C$:/Users/Khin$ May$ Thu/CLionProjects/Assignment3/cmake-b
 
 build cmake_object_order_depends_target_Assignment3: phony || CMakeFiles/Assignment3.dir
 
-build CMakeFiles/Assignment3.dir/main.c.obj: C_COMPILER__Assignment3_Debug C$:/Users/Khin$ May$ Thu/CLionProjects/Assignment3/main.c || cmake_object_order_depends_target_Assignment3
+build CMakeFiles/Assignment3.dir/main.c.obj: C_COMPILER__Assignment3_Debug C$:/Users/Khin$ May$ Thu/CLionProjects/CAssignment/Assignment3/main.c || cmake_object_order_depends_target_Assignment3
   DEP_FILE = CMakeFiles\Assignment3.dir\main.c.obj.d
   FLAGS = -g -std=gnu11
   OBJECT_DIR = CMakeFiles\Assignment3.dir
@@ -81,7 +81,7 @@ build Assignment3.exe: C_EXECUTABLE_LINKER__Assignment3_Debug CMakeFiles/Assignm
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D "C:\Users\Khin May Thu\CLionProjects\Assignment3\cmake-build-debug" && "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  COMMAND = cmd.exe /C "cd /D "C:\Users\Khin May Thu\CLionProjects\CAssignment\Assignment3\cmake-build-debug" && "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -92,7 +92,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D "C:\Users\Khin May Thu\CLionProjects\Assignment3\cmake-build-debug" && "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S"C:\Users\Khin May Thu\CLionProjects\Assignment3" -B"C:\Users\Khin May Thu\CLionProjects\Assignment3\cmake-build-debug""
+  COMMAND = cmd.exe /C "cd /D "C:\Users\Khin May Thu\CLionProjects\CAssignment\Assignment3\cmake-build-debug" && "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S"C:\Users\Khin May Thu\CLionProjects\CAssignment\Assignment3" -B"C:\Users\Khin May Thu\CLionProjects\CAssignment\Assignment3\cmake-build-debug""
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -110,7 +110,7 @@ build Assignment3: phony Assignment3.exe
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/Khin May Thu/CLionProjects/Assignment3/cmake-build-debug
+# Folder: C:/Users/Khin May Thu/CLionProjects/CAssignment/Assignment3/cmake-build-debug
 
 build all: phony Assignment3.exe
 

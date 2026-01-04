@@ -10,10 +10,12 @@ void check_book_already(char book_name[200]);
 void delete_book();
 void search_book();
 void compare_two_title_name(char search_title[200],char db_title[200]);
+void check_duplicate_id(int book_id);
 
 int G_index=0;
 int found_title=-1;
 int book_exit_validation=-1;
+int duplicate_id=-1;
 
 struct book{
     int book_id;
@@ -68,13 +70,18 @@ void add_book(){
     fgets(author_name, sizeof(author_name), stdin);
 
     book_exit_validation=-1;
+    duplicate_id=-1;
+    check_duplicate_id(book_id);
     check_book_already(book_title);
-    if(book_exit_validation!=-1){
+
+    if(book_exit_validation!=-1 && duplicate_id==-1){
         db[G_index].book_id=book_id;
         data_assign_to_db(db[G_index].book_title,book_title);
         data_assign_to_db(db[G_index].author_name,author_name);
         G_index++;
         printf("Book added successfully! \n");
+    }else if( duplicate_id!=-1){
+        printf("This Book ID is already exist! \n");
     }else{
         printf("This Book is already exist! \n");
     }
@@ -156,6 +163,14 @@ void display_all_book(){
                    db[book].book_title,
                    db[book].author_name);
             printf("\n");
+        }
+    }
+}
+void check_duplicate_id(int book_id){
+    for(int i=0;i<G_index;i++){
+        if(book_id==db[i].book_id){
+            duplicate_id=i;
+            break;
         }
     }
 }
