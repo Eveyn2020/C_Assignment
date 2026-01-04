@@ -5,6 +5,9 @@
 
 int G_index=0;
 int found_name=-1;
+int phone_exit_validation=-1;
+int found_contact=-1;
+void check_duplicate_phone(char phone_no[30]);
 
 void add_contact();
 void search_contact();
@@ -68,14 +71,17 @@ void add_contact(){
     printf("Enter Phone Number:");
     fgets(phone_no,sizeof (phone_no),stdin);
     phone_no[strcspn(phone_no, "\n")] = '\0';
-
-    assign_to_db(db[G_index].name,name);
-    assign_to_db(db[G_index].phone_no,phone_no);
-
-    G_index++;
-
-    recording_to_file();
-    printf("Contact Added Successfully! \n\n");
+    phone_exit_validation=-1;
+    check_duplicate_phone(phone_no);
+    if(phone_exit_validation!=-1){
+        assign_to_db(db[G_index].name,name);
+        assign_to_db(db[G_index].phone_no,phone_no);
+        G_index++;
+        recording_to_file();
+        printf("Contact Added Successfully! \n\n");
+    }else{
+        printf("This contact is already exist.\n\n");
+    }
 }
 void search_contact(){
     char search_name[100];
@@ -145,6 +151,30 @@ void display_all_contacts(){
                 printf("Phone :%s \n",db[contact].phone_no);
             }
             printf("--------------------------------\n\n");
+    }
+}
+void check_duplicate_phone(char phone_no[30]){
+    int phone_count=char_counter(phone_no);
+    int found=0;
+    for(int i=0;i<G_index;i++){
+        int same_count=0;
+        int db_phone_count= char_counter(db[i].phone_no);
+        if(db_phone_count==phone_count){
+            for(int n=0;n<phone_count;n++){
+                if(phone_no[n]!=db[i].phone_no[n]){
+                    break;
+                }
+                same_count++;
+            }
+        }
+        if(phone_count==same_count){
+            phone_exit_validation=-1;
+            found=1;
+            break;
+        }
+    }
+    if(found==0){
+        phone_exit_validation = 1;
     }
 }
 void assign_to_db(char db_name[100],char assign[100]){
